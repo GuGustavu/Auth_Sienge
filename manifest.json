@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "Sienge Auth",
+    "version": "1.0",
+    "description": "Esta extensão facilita o monitoramento de sessões, fornece o cookie de sessão e automatiza o processo de login para o site Catagua Sienge.",
+    "permissions": [
+      "cookies",
+      "storage",
+      "tabs",
+      "system.display",
+      "https://catagua.sienge.com.br/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "assets/icone_nao_autenticado.png",
+        "48": "assets/icone_nao_autenticado.png",
+        "128": "assets/icone_nao_autenticado.png"
+      }
+    },
+    "icons": {
+      "16": "assets/icone_nao_autenticado.png",
+      "48": "assets/icone_nao_autenticado.png",
+      "128": "assets/icone_nao_autenticado.png"
+    }
+  }
+  
