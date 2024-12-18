@@ -26,6 +26,16 @@
     "128": "assets/icons-128.png"
   },
   "host_permissions": [
-    "https://catagua.sienge.com.br/*"
+    "https://*.sienge.com.br/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "functions/contentInject.js"
+      ]
+    }
   ]
 }
