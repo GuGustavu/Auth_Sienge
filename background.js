@@ -5,7 +5,7 @@ import './listeners/messageListener.js';
 import './listeners/tabChangeListener.js';
 
 // Importação das funções principais
-import iniciarPing from './functions/iniciarPing.js';
+import './functions/iniciarPing.js';
 
 // Inicialização
 console.log('Extensão inicializada...');
