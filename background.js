@@ -9,4 +9,3 @@ import iniciarPing from './functions/iniciarPing.js';
 
 // Inicialização
 console.log('Extensão inicializada...');
-iniciarPing();

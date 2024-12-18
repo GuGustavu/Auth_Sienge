@@ -5,8 +5,8 @@ export default async function checkSession() {
     var userRequest = await fetch(USER_DATA_URL)
 
     if (userRequest.ok) {
-        requestUser = await requestUser.json()
-        if (requestUser.nome) {
+        const contentType = userRequest.headers.get('Content-Type');
+        if (contentType && contentType.includes('application/json')) {
             updateAuthenticationStatus(true);
             return true
         } else {

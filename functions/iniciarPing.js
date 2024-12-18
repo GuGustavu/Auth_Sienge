@@ -1,7 +1,11 @@
-import checkSession from "./checkSession";
+import checkSession from '../functions/checkSession.js';
 
-export default function iniciarPing() {
-    checkSession();
-    setInterval(checkSession, 10000);
-  }
-  
+function iniciarPing() {
+  checkSession();
+  setInterval(checkSession, 10000);
+}
+
+
+iniciarPing();
+
+export { iniciarPing };

@@ -1,18 +1,25 @@
 import getSession from "../functions/getSession.js";
 import openPopupLogin from "../functions/openPopupLogin.js"
 
-chrome.runtime.onMessage.addListener(function (request, sendResponse) {
-    if (request.sessionAuth === "getUserSession") {
-        (async () => {
-            var userInfo = await getSession();
+function messageListener() {
+    chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+        if (request.sessionAuth === "getUserSession") {
+            (async () => {
 
-            if (userInfo.nome != null) { sendResponse(userInfo) }
-            else {
-                await openPopupLogin();
-                userInfo = await getSession();
-                sendResponse(userInfo)
-            }
-        })()
-        return true; // Indica que a resposta será assíncrona
-    }
-});
+                var userInfo = await getSession();
+
+                if (userInfo.nome != null) { sendResponse(userInfo) }
+                else {
+                    await openPopupLogin();
+                    userInfo = await getSession();
+                    sendResponse(userInfo)
+                }
+            })()
+            return true; // Indica que a resposta será assíncrona
+        }
+    });
+}
+
+messageListener();
+
+export { messageListener };

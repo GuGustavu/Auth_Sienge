@@ -1,6 +1,8 @@
 import { LOGIN_URL, HOME_URL } from "../config/constants.js";
 import updateAuthenticationStatus from "../functions/updateAuthenticationStatus.js"
 
+let popupWindowId = null;
+
 export default async function openPopupLogin() {
     return new Promise((resolve) => {
         const dimensions = { width: 400, height: 600 };
